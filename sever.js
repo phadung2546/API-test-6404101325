@@ -28,6 +28,13 @@ app.post('/books', (req, res) => {
     res.json(Object.assign(books[updateIndex], req.body))
     
   })
+
+  app.delete('/books/:id', (req, res) => {
+    const deletedIndex = books.findIndex(book => book.id === req.params.id)
+    books.splice(deletedIndex, 1)
+    
+    res.send('delete')
+ })
   
   
 
