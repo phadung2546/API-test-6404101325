@@ -7,6 +7,9 @@ app.get('/' ,(req , res ) => {
 app.get('/book' , (req , res) =>{
     res.json(books)
 })
+app.get('/book/:id' , (req,res) => { 
+    res.json(books.find(book => book.id === req.params.id))
+})
 
 
 
